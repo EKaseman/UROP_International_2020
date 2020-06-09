@@ -1,0 +1,5 @@
+#ignore module folders
+.vscode/
+
+#ignore system files
+pgmpy/
