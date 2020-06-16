@@ -47,7 +47,7 @@ print(cpd_s)
 
 #plotting Failure Tree
 dot = to_pydot(model)
-with open('hello.png', 'wb') as f:
+with open('failure_tree_graph.png', 'wb') as f:
     f.write(dot.create_png())
 
 #checking for appropriate independencies
