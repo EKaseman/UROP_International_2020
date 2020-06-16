@@ -6,12 +6,14 @@
 #a self-learning expert system. This failure tree will be used
 #to populate a Bayesian Network
 
+#importing packages
 import numpy as np
 import pandas as pd
 from pgmpy.models import BayesianModel
 from pgmpy.factors.discrete import TabularCPD
 from networkx.drawing.nx_pydot import to_pydot
 
+# Dictionary of errors
 errors = {'R': 'inc_adj_of_range','G': 'default_of_goods','W': 'inc_width_set','T': 'dim_acc_outside_tol','F': 'inc_feed','A': 'aftertreatment','S': 'selection',}
 
 # Defining the model structure. Define the network by just passing a list of edges.
@@ -48,4 +50,5 @@ dot = to_pydot(model)
 with open('hello.png', 'wb') as f:
     f.write(dot.create_png())
 
+#checking for appropriate independencies
 print(model.local_independencies('default_of_goods'))
