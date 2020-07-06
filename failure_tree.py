@@ -275,7 +275,11 @@ for p in range(files):
     with open('failure_tree_graph_%s.png' % processes[p], 'wb') as f:
         f.write(dot.create_png())
     #print(temp_model.check_model())
-    print(temp_model.get_cpds(processes[p].get_error(0)))
+    #Sample output of CPDs for causes and errors
+    for e in range(len(processes[p].get_errors())):
+        for c in range(len(processes[p].get_error(e).get_causes())):
+            print(temp_model.get_cpds(processes[p].get_error(e).get_cause(c)))
+        print(temp_model.get_cpds(processes[p].get_error(e)))
 
 # class Application(tk.Frame):
 #     def __init__(self, master=None):
