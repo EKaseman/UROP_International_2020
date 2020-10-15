@@ -292,7 +292,7 @@ def get_ordered_cause_list(processes):
             # terms of probability
             temp_error.get_causes().sort(key=sort_func, reverse=True)
             # Print causes in order with their associated probability
-            print('Error: {}'.format(temp_error))
+            print('Name of Error: {}'.format(temp_error))
             for c in range(len(temp_error.get_causes())):
                 print('{}. Cause: {} | Probability: {}'.format(c+1,temp_error.get_cause(c), temp_error.get_cause(c).get_occ_prob()))  
             print()     
